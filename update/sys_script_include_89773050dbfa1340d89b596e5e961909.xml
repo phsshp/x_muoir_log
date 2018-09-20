@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_maog_log.SequencedLoggerImp</api_name>
+        <client_callable>false</client_callable>
+        <description>Sequenced Logger Implementation</description>
+        <name>SequencedLoggerImp</name>
+        <script><![CDATA[var SequencedLoggerImp = Class.create();
+SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
+	var p = {};
+	var TYPE = p.type = 'SequencedLoggerImp';
+
+	// Class-wide sequence number.
+	var logSeqNo = 1;  // Shared log sequence number
+	function getSeqNo() {
+		var logSeqStr, logSeqLen;
+		logSeqStr = logSeqNo + '';
+		logSeqLen = logSeqStr.length;
+		if (logSeqLen < 6) {
+			logSeqStr = "00000".substring(logSeqLen - 1) + logSeqStr;
+		}
+		logSeqNo++;
+		return logSeqStr;
+	}
+
+	// Log level constants
+	var LEVEL = {};
+	var ERROR   = LEVEL.ERROR   = 'error';
+	var WARN    = LEVEL.WARN    = 'warn';
+	var INFO    = LEVEL.INFO    = 'info';
+	var DEBUG   = LEVEL.DEBUG   = 'debug';
+	var DEFAULT = LEVEL.DEFAULT = 'default';
+	s.LEVEL = p.LEVEL = LEVEL;
+
+	// The levelMap drives creation of functions for a logger instance.
+	// Functions are tailored to minimize conditionals, calls, and scope.
+	var L = {  // Shorten levelMap constants.
+		OFF : { src : ' ',          fn: null     },
+		ERR : { src : ' ',          fn: gs.error },
+		WRN : { src : ' ',          fn: gs.warn  },
+		INF : { src : ' ',          fn: gs.info  },
+		DBG : { src : ' [DEBUG] ',  fn: gs.info  }, // Set to info on purpose
+	};
+	function cons() {
+		var o = {};
+		var end = arguments.length - 1;
+		for(var i = 0; i < end ; i = i + 2) {
+			o[arguments[i]] = arguments[i + 1];
+		}
+		return o;
+	}
+	var levelMap = {};  // Drives definition of log functions.
+	levelMap[ERROR  ] =  cons(ERROR, L.ERR, WARN, L.OFF, INFO, L.OFF, DEBUG, L.OFF);
+	levelMap[WARN   ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.OFF, DEBUG, L.OFF);
+	levelMap[INFO   ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.INF, DEBUG, L.OFF);
+	levelMap[DEFAULT] =  levelMap[INFO];
+	levelMap[DEBUG  ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.INF, DEBUG, L.DBG);
+
+	// Generate a custom log method
+	function makeLoggerClosure(msgPrefix, fn) {
+		return function log(msg, arg1) {
+			var params;
+			var len = arguments.length;
+			if (len < 2) {
+				params = [];
+			} else if (len == 2 && arg1 && typeof arg1 == 'object' && Array.isArray(arg1)) {
+				params = arg1;
+			} else {
+				params = Array.prototype.slice.call(arguments, 1);
+			}
+
+			msg = gs.getMessage(msg, params);
+			fn(getSeqNo() + msgPrefix + msg);
+			return msg;  // Support nesting.
+		};
+	}
+
+	// Configure a custom log method
+	function makeLogger(level, loggerName, levels) {
+		var fn = levels[level].fn;
+
+		if (fn === null) {
+			return function noop() { };
+		}
+
+		var msgPrefix =  ' ' + loggerName + levels[level].src;
+		return makeLoggerClosure(msgPrefix, fn);
+	}
+
+	// Make a fast isDebugging method.
+	function makeIsDebugging(debug) {
+		if (!debug) {
+			return (function() { return false; });
+		}
+		return (function() { return true; });
+	}
+
+
+	function initialize(spec) {
+		var loggerName = spec.loggerName;
+		var loggerKey = spec.loggerKey;
+		var pp = spec.prefProps;
+		var override = spec.override;
+		var defaultLevel = spec.defaultLevel || LEVEL.DEFAULT;
+
+		var level = pp.getValue('level', defaultLevel);
+		var levels = levelMap[level];
+		if (!levels) {
+			this.errmsg = 'Invalid property ' + pp.getName('level') + '=' + level;
+			level = defaultLevel;
+			levels = levelMap[defaultLevel];
+		}
+
+		this.level = level;
+		this.loggerName = loggerName; // For the Script Debugger
+		this.loggerKey = pp.getPrefix();
+		this.error = makeLogger(ERROR, loggerName, levels);
+		this.warn =  makeLogger(WARN,  loggerName, levels);
+		this.info =  makeLogger(INFO,  loggerName, levels);
+		this.debug = makeLogger(DEBUG, loggerName, levels);
+		this.isDebugging = makeIsDebugging(levels[DEBUG].fn != L.OFF);
+	}
+	p.initialize = initialize;
+
+	return p;
+})(SequencedLoggerImp);  // end prototype scope]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>peter.smith</sys_created_by>
+        <sys_created_on>2018-06-15 13:59:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>89773050dbfa1340d89b596e5e961909</sys_id>
+        <sys_mod_count>4</sys_mod_count>
+        <sys_name>SequencedLoggerImp</sys_name>
+        <sys_package display_value="Logger" source="x_maog_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
+        <sys_update_name>sys_script_include_89773050dbfa1340d89b596e5e961909</sys_update_name>
+        <sys_updated_by>peter.smith</sys_updated_by>
+        <sys_updated_on>2018-06-24 18:58:31</sys_updated_on>
+    </sys_script_include>
+</record_update>
