@@ -14,7 +14,7 @@ Logger.prototoype = (function Logger_proto(s) {
 	var APP = 'x_muoir_log';
 
 	// Static cache.  You'll get the same logger if this class is not unloaded.
-	var loggers = {};  // One logger per loggerName
+	var loggers = {};  // One logger per name
 
 	// Big cutoff switch
 	var disabled = (function() {
@@ -23,47 +23,34 @@ Logger.prototoype = (function Logger_proto(s) {
 		return (prop === 'true');
 	})();
 
-	// Global default level
-	var defaultLevel = (function() {
-		var name = APP + '.Logger.log.default_level';
-		var prop = gs.getProperty(name, 'info');
-		return prop;
-	})();
-
-	s.getLogger = function getLogger(loggerName, override) {
-		var pp, loggerKey, cachedLogger;
-		var scope = gs.getCallerScopeName();
+	s.getLogger = function getLogger(name, override) {
+		var pp, key, cachedLogger, scope;
 
 		if (disabled) return gs;
 
-		loggerName = loggerName || TYPE;
-		pp = new PrefProps(scope, loggerName + '.log');
-		loggerKey = pp.getPrefix();
+		scope = gs.getCallerScopeName();
 
-		cachedLogger = loggers[loggerKey];
+		name = name || TYPE;
+		key = scope + '.' + name;
+
+		cachedLogger = loggers[key];
 		if (!cachedLogger) {
-			cachedLogger = new x_muoir_log.SequencedLoggerImp({
-				loggerName:   loggerName,
-				loggerKey:    loggerKey,
-				prefProps:    pp,
-				defaultLevel: defaultLevel,
-				override:     override // jig for testing
-			});
-			loggers[loggerKey] = cachedLogger;
+			// Add implementations here
+			cachedLogger = new x_muoir_log.SequencedLoggerImp(scope, name);
+			loggers[key] = cachedLogger;
 		}
 		return cachedLogger;
 	};
 
 	// Remove the cached logger.  It doesn't stop modules that have
 	// a reference from continuing to use it.
-	s.resetLogger = function resetLogger(loggerName) {
-		var pp, loggerKey;
+	s.resetLogger = function resetLogger(name) {
+		var pp, key;
 
-		loggerName = loggerName || TYPE;
-		pp = new PrefProps(gs.getCallerScopeName(), loggerName + '.log');
-		loggerKey = pp.getPrefix();
+		name = name || TYPE;
+		key = scope + '.' + name;
 
-		delete loggers[loggerKey];
+		delete loggers[key];
 	};
 
 	function makeInfoObject(logger) {
@@ -91,10 +78,9 @@ Logger.prototoype = (function Logger_proto(s) {
 		this.debugObject = logger.debugObject || makeDebugObject(logger);
 	}
 
-	function initialize(loggerName) {
-		cloneLogger(getLogger(loggerName));
-	}
-	p.initialize = initialize;
+	function initialize(name) {
+		cloneLogger(getLogger(name));
+	} p.initialize = initialize;
 
 	return p;
 })(Logger);  // end Logger_proto
@@ -103,8 +89,8 @@ Logger.test = function test() {
 	var SLTEST = 'LoggerTest';
 
 	var	scopePrefix = PrefProps.getScopePrefix(gs.getCallerScopeName());
-	var	loggerName = SLTEST;
-	var	prefProps = scopePrefix + 'sequenced_logger.' + loggerName + '.';
+	var	name = SLTEST;
+	var	prefProps = scopePrefix + 'sequenced_logger.' + name + '.';
 
 	var sl = Logger;
 	gs.getUser().savePreference(prefProps + 'enabled', 'false');
@@ -157,14 +143,14 @@ Logger.test = function test() {
         <sys_created_on>2018-06-15 13:55:33</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>9246b410dbfa1340d89b596e5e961972</sys_id>
-        <sys_mod_count>12</sys_mod_count>
+        <sys_mod_count>15</sys_mod_count>
         <sys_name>Logger</sys_name>
         <sys_package display_value="Logger" source="x_muoir_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
         <sys_update_name>sys_script_include_9246b410dbfa1340d89b596e5e961972</sys_update_name>
-        <sys_updated_by>peter.smith</sys_updated_by>
-        <sys_updated_on>2018-07-03 14:14:42</sys_updated_on>
+        <sys_updated_by>Peter.Smith</sys_updated_by>
+        <sys_updated_on>2018-09-22 02:58:05</sys_updated_on>
     </sys_script_include>
 </record_update>

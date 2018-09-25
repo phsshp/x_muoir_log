@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Log Channel" max_length="40" name="x_muoir_log_log_channel" type="collection">
+        <element hint="Application scope that opens this channel" label="Application" max_length="32" name="application" reference="sys_scope" type="reference"/>
+        <element label="Description" max_length="1000" name="description" type="string"/>
+        <element choice="1" hint="Verbosity level" label="Level" max_length="40" name="level" type="choice">
+            <choice>
+                <element label="Debug" value="debug"/>
+                <element label="Error" sequence="100" value="error"/>
+                <element label="Warning" sequence="200" value="warn"/>
+                <element label="Information" sequence="300" value="info"/>
+            </choice>
+        </element>
+        <element hint="Channel name passed to Logger.getLogger" label="Name" max_length="100" name="name" type="string"/>
+        <element hint="User these settings apply to, or blank for default" label="User" max_length="32" name="user" reference="sys_user" reference_qual="active=true^EQ" reference_qual_condition="active=true^EQ" type="reference"/>
+        <index name="index">
+            <element name="application"/>
+        </index>
+        <index name="index2">
+            <element name="user"/>
+        </index>
+    </element>
+</database>

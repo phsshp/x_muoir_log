@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_section caption="" section_id="3f09277bdb2cab007b81d92b5e9619bf" sys_domain="global" table="x_muoir_log_log_channel" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>0</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>113963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>user</element>
+            <position>1</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>913963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>2</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>153963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>application</element>
+            <position>3</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>953963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>level</element>
+            <position>4</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>193963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>5</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:39</sys_created_on>
+            <sys_id>993963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:39</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>description</element>
+            <position>6</position>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:40</sys_created_on>
+            <sys_id>1d3963bbdb2cab007b81d92b5e9619b6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_muoir_log_log_channel" sys_domain="global" view="Default view">3f09277bdb2cab007b81d92b5e9619bf</sys_ui_section>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:40</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption/>
+            <header>false</header>
+            <name>x_muoir_log_log_channel</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:43:01</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3f09277bdb2cab007b81d92b5e9619bf</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_muoir_log_log_channel</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Logger" source="x_muoir_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
+            <sys_update_name>sys_ui_section_3f09277bdb2cab007b81d92b5e9619bf</sys_update_name>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:43:01</sys_updated_on>
+            <sys_user/>
+            <title>true</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
+    </sys_ui_section>
+</record_update>

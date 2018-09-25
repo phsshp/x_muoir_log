@@ -26,13 +26,11 @@ SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
 	}
 
 	// Log level constants
-	var LEVEL = {};
-	var ERROR   = LEVEL.ERROR   = 'error';
-	var WARN    = LEVEL.WARN    = 'warn';
-	var INFO    = LEVEL.INFO    = 'info';
-	var DEBUG   = LEVEL.DEBUG   = 'debug';
-	var DEFAULT = LEVEL.DEFAULT = 'default';
-	s.LEVEL = p.LEVEL = LEVEL;
+	var LEVEL = s.LEVEL = p.LEVEL = {};
+	var ERROR = LEVEL.ERROR = 'error';
+	var WARN  = LEVEL.WARN  = 'warn';
+	var INFO  = LEVEL.INFO  = 'info';
+	var DEBUG = LEVEL.DEBUG = 'debug';
 
 	// The levelMap drives creation of functions for a logger instance.
 	// Functions are tailored to minimize conditionals, calls, and scope.
@@ -55,7 +53,6 @@ SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
 	levelMap[ERROR  ] =  cons(ERROR, L.ERR, WARN, L.OFF, INFO, L.OFF, DEBUG, L.OFF);
 	levelMap[WARN   ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.OFF, DEBUG, L.OFF);
 	levelMap[INFO   ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.INF, DEBUG, L.OFF);
-	levelMap[DEFAULT] =  levelMap[INFO];
 	levelMap[DEBUG  ] =  cons(ERROR, L.ERR, WARN, L.WRN, INFO, L.INF, DEBUG, L.DBG);
 
 	// Generate a custom log method
@@ -78,14 +75,14 @@ SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
 	}
 
 	// Configure a custom log method
-	function makeLogger(level, loggerName, levels) {
+	function makeLogger(level, name, levels) {
 		var fn = levels[level].fn;
 
 		if (fn === null) {
 			return function noop() { };
 		}
 
-		var msgPrefix =  ' ' + loggerName + levels[level].src;
+		var msgPrefix =  ' ' + name + levels[level].src;
 		return makeLoggerClosure(msgPrefix, fn);
 	}
 
@@ -97,29 +94,20 @@ SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
 		return (function() { return true; });
 	}
 
+	function initialize(scope, name) {
+		var info, level, levels;
 
-	function initialize(spec) {
-		var loggerName = spec.loggerName;
-		var loggerKey = spec.loggerKey;
-		var pp = spec.prefProps;
-		var override = spec.override;
-		var defaultLevel = spec.defaultLevel || LEVEL.DEFAULT;
+		info = ChannelManager.getChannelInfo(scope, name);
+		level = info.level;
 
-		var level = pp.getValue('level', defaultLevel);
-		var levels = levelMap[level];
-		if (!levels) {
-			this.errmsg = 'Invalid property ' + pp.getName('level') + '=' + level;
-			level = defaultLevel;
-			levels = levelMap[defaultLevel];
-		}
+		levels = levelMap[level];
 
 		this.level = level;
-		this.loggerName = loggerName; // For the Script Debugger
-		this.loggerKey = pp.getPrefix();
-		this.error = makeLogger(ERROR, loggerName, levels);
-		this.warn =  makeLogger(WARN,  loggerName, levels);
-		this.info =  makeLogger(INFO,  loggerName, levels);
-		this.debug = makeLogger(DEBUG, loggerName, levels);
+		this.name = name; // For the Script Debugger
+		this.error = makeLogger(ERROR, name, levels);
+		this.warn =  makeLogger(WARN,  name, levels);
+		this.info =  makeLogger(INFO,  name, levels);
+		this.debug = makeLogger(DEBUG, name, levels);
 		this.isDebugging = makeIsDebugging(levels[DEBUG].fn != L.OFF);
 	}
 	p.initialize = initialize;
@@ -131,14 +119,14 @@ SequencedLoggerImp.prototype = (function SequencedLoggerImp_proto(s) {
         <sys_created_on>2018-06-15 13:59:08</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_id>89773050dbfa1340d89b596e5e961909</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>8</sys_mod_count>
         <sys_name>SequencedLoggerImp</sys_name>
         <sys_package display_value="Logger" source="x_muoir_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
         <sys_policy>read</sys_policy>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
         <sys_update_name>sys_script_include_89773050dbfa1340d89b596e5e961909</sys_update_name>
-        <sys_updated_by>peter.smith</sys_updated_by>
-        <sys_updated_on>2018-06-24 18:58:31</sys_updated_on>
+        <sys_updated_by>Peter.Smith</sys_updated_by>
+        <sys_updated_on>2018-09-22 02:58:58</sys_updated_on>
     </sys_script_include>
 </record_update>

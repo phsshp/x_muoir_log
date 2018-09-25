@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="level" table="x_muoir_log_log_channel" version="3">
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Debug</label>
+            <language>en</language>
+            <name>x_muoir_log_log_channel</name>
+            <sequence/>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:39:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7648633bdb2cab007b81d92b5e96199a</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:39:57</sys_updated_on>
+            <value>debug</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Error</label>
+            <language>en</language>
+            <name>x_muoir_log_log_channel</name>
+            <sequence>100</sequence>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:39:15</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>959763f7db2cab007b81d92b5e9619c3</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:39:27</sys_updated_on>
+            <value>error</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Warning</label>
+            <language>en</language>
+            <name>x_muoir_log_log_channel</name>
+            <sequence>200</sequence>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:39:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>38382bf7db2cab007b81d92b5e96198e</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:39:36</sys_updated_on>
+            <value>warn</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>level</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Information</label>
+            <language>en</language>
+            <name>x_muoir_log_log_channel</name>
+            <sequence>300</sequence>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:39:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dc482337db2cab007b81d92b5e9619e5</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:39:49</sys_updated_on>
+            <value>info</value>
+        </sys_choice>
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>level</element>
+            <name>x_muoir_log_log_channel</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-21 23:39:15</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>30382ff7db2cab007b81d92b5e9619b7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>level</sys_name>
+            <sys_package display_value="Logger" source="x_muoir_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
+            <sys_update_name>sys_choice_x_muoir_log_log_channel_level</sys_update_name>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-21 23:39:15</sys_updated_on>
+        </sys_choice_set>
+    </sys_choice>
+</record_update>

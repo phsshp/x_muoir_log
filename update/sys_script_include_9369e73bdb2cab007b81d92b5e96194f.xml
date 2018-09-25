@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_muoir_log.ChannelManager</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>ChannelManager</name>
+        <script><![CDATA[var ChannelManager = Class.create();
+ChannelManager.prototype = (function ChannelManager_proto(s) {
+	var p = {};
+	var TYPE = p.type = 'ChannelManager';
+
+	var DEFAULT_CHANNEL = 'Default';
+	var DEFAULT_SCOPE = 'global';
+
+	// The Sys ID for the global sys_scope is 'global' but all other
+	// sys_scope Sys IDs are true Sys IDs.  Very confusing.
+	function findScopeId(scope) {
+		var scopeGr;
+		if (scope && scope !== 'global') {
+			scopeGr = new GlideRecord('sys_scope');
+			if (scopeGr.get('scope', scope)) {
+				return scopeGr.getUniqueValue();
+			}
+		}
+		return null;
+	}
+
+	function getChannelRecord(scopeId, name, userId) {
+		var chGr, info = null;
+
+		chGr = new GlideRecord('x_muoir_log_log_channel');
+		chGr.addQuery('name', name);
+		if (scopeId) chGr.addQuery('application', scopeId);
+		if (userId) chGr.addQuery('user', userId);
+		chGr.query();
+		if (chGr.next()) {
+			info = {
+				'scopeId': chGr.getValue('application'),
+				'name':    chGr.getValue('name'),
+				'userId':  chGr.getValue('user'),
+				'level':   chGr.getValue('level'),
+			};
+		}
+		return info;
+	}
+
+	function updateChannelRecord(scopeId, name, info, userId) {
+		var chGr;
+
+		chGr = new GlideRecord('x_muoir_log_log_channel');
+		chGr.initialize();
+		chGr.setValue('application', scopeId);
+		chGr.setValue('name', name);
+		chGr.setValue('user', userId);
+		chGr.setValue('level', info.level);
+		chGr.update();
+	}
+
+	function getChannelInfo(scope, name) {
+		var info, scopeId;
+		var needChannelSpecific, needScopeSpecific;
+		var needUserDefault, needGlobalDefault;
+
+		if (!scope) scope = DEFAULT_SCOPE;
+		if (!name) name = DEFAULT_CHANNEL;
+
+		scopeId = findScopeId(scope);
+
+		// Channel User Specific
+		info = getChannelRecord(scopeId, name, gs.getUserID());
+		if (info) return info;
+
+		// Channel Specific
+		if (!info) {
+			info = getChannelRecord(scopeId, name);
+			if (!info) needChannelSpecific = true;
+		}
+
+		// Scope Specific
+		if (!info) {
+			info = getChannelRecord(scopeId);
+			if (!info) needScopeSpecific = true;
+		}
+		
+		// User Default
+		if (!info) {
+			info = getChannelRecord(DEFAULT_SCOPE, DEFAULT_CHANNEL, gs.getUserID());
+			if (!info) needUserDefault = true;
+		}
+
+		// Global Default
+		if (!info) {
+			info = getChannelRecord(DEFAULT_SCOPE, DEFAULT_CHANNEL);
+			if (!info) needGlobalDefault = true;
+		}
+
+		// Bootstrap
+		if (!info) {
+			info = {
+				'scopeId': DEFAULT_SCOPE,
+				'name':    DEFAULT_CHANNEL,
+				'userId':  '',
+				'level':   'info',
+			};
+		}
+
+		if (needChannelSpecific) updateChannelRecord(scopeId, name, info);
+		if (needScopeSpecific) updateChannelRecord(scopeId, '', info);
+		if (needUserDefault) updateChannelRecord(DEFAULT_SCOPE, DEFAULT_CHANNEL, info, gs.getUserID());
+		if (needGlobalDefault) updateChannelRecord(DEFAULT_SCOPE, DEFAULT_CHANNEL, info);
+
+		return info;
+	} s.getChannelInfo = getChannelInfo;
+
+	return p;
+})(ChannelManager);]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>Peter.Smith</sys_created_by>
+        <sys_created_on>2018-09-22 00:31:16</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>9369e73bdb2cab007b81d92b5e96194f</sys_id>
+        <sys_mod_count>19</sys_mod_count>
+        <sys_name>ChannelManager</sys_name>
+        <sys_package display_value="Logger" source="x_muoir_log">3a167010dbfa1340d89b596e5e96190a</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
+        <sys_update_name>sys_script_include_9369e73bdb2cab007b81d92b5e96194f</sys_update_name>
+        <sys_updated_by>Peter.Smith</sys_updated_by>
+        <sys_updated_on>2018-09-22 02:54:35</sys_updated_on>
+    </sys_script_include>
+</record_update>

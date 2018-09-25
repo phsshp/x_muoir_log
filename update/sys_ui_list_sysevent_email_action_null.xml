@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="sysevent_email_action" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>name</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>95f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>active</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>d5f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>collection</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>19f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>template</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>59f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>condition</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>99f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>description</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>d9f25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>recipient_fields</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>1df25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>recipient_users</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>5df25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>recipient_groups</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>8</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>9df25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>action_insert</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>9</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>ddf25fe04f05860032e8d49f0310c766</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>action_update</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>10</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>11f25fe04f05860032e8d49f0310c767</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>order</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>11</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>51f25fe04f05860032e8d49f0310c767</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>mandatory</element>
+            <list_id display_value="sysevent_email_action" element="NULL" name="sysevent_email_action" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">d1f25fe04f05860032e8d49f0310c766</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>12</position>
+            <sum>false</sum>
+            <sys_created_by>mark.cupp</sys_created_by>
+            <sys_created_on>2015-07-01 15:10:41</sys_created_on>
+            <sys_id>91f25fe04f05860032e8d49f0310c767</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>mark.cupp</sys_updated_by>
+            <sys_updated_on>2015-07-01 15:10:41</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>sysevent_email_action</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>Peter.Smith</sys_created_by>
+            <sys_created_on>2018-09-22 22:42:16</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7bb4a0dcdb78eb007b81d92b5e961941</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name/>
+            <sys_package/>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Logger">3a167010dbfa1340d89b596e5e96190a</sys_scope>
+            <sys_update_name/>
+            <sys_updated_by>Peter.Smith</sys_updated_by>
+            <sys_updated_on>2018-09-22 22:42:16</sys_updated_on>
+            <sys_user display_value="Peter Smith">a4c3480a4f94070032e8d49f0310c7dd</sys_user>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
+    </sys_ui_list>
+</record_update>
